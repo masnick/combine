@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: 1
+  amount: 1.5
+  fee: 9.99
+  token: MyString
+  paid: false
+
+two:
+  client_id: 1
+  amount: 1.5
+  fee: 9.99
+  token: MyString
+  paid: false
