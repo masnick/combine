@@ -1,0 +1,21 @@
+body#cornrows {
+  padding-top: 6em;
+
+  input {
+    font-family: 'Crimson Text', serif;
+  }
+
+  small {
+    color: #aaa;
+    font-size: 0.8em;
+    code {
+      color: #aaa;
+      font-size: 0.8em;
+    }
+  }
+
+  #stripe_error {
+    color: red;
+  }
+
+}

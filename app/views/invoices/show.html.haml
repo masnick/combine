@@ -1,0 +1,65 @@
+%p Hi #{@invoice.client.name},
+
+%p
+  Here's an online payment form for <b>Invoice ##{@invoice.number}</b> for a total of <b>#{number_to_currency @invoice.total}</b>.
+
+  - if @invoice.fee == STRIPE_FEE/2
+    This includes a #{(@invoice.fee * 100).round(3)}% convenience fee.#{'*' if @invoice.fee == STRIPE_FEE/2}
+
+  - elsif @invoice.fee > 0
+    This includes a #{(@invoice.fee * 100).round(3)}% convenience fee.
+
+%p Please complete this payment by filling out the form below. We accept any major credit card and use <a href="http://stripe.com" target="_blank">Stripe</a> to safely and securely process your payment.
+
+%p Thanks for your business,
+%p{:style => 'font-style: italic;'}= BUSINESS_NAME
+
+- if @invoice.fee == STRIPE_FEE/2
+  %p{:style => 'color: #bbb; font-size: 0.9em; margin-top: 2em;'}  * Stripe <a href="https://stripe.com/help/pricing" style="color: #bbb;" target="_blank">charges us 2.9% per transaction</a> and we split this fee with you. We think the convenience of Stripe more than offsets this small fee for both of us, and hopefully you'll get some reward points too.
+
+%noscript
+  .alert
+    JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+%hr
+%h2
+  %em Payment information
+.well
+  #stripe_error
+  = form_for @invoice, :url => {:action => :pay, :id => @invoice.token} do |f|
+    = f.hidden_field :stripe_card_token
+    - if @invoice.errors.any?
+      .alert
+        %ul
+          - @invoice.errors.full_messages.each do |msg|
+            = msg
+
+    %fieldset
+      <!--
+      .control-group
+        = label_tag :name, "Name on your card"
+        .controls
+        = text_field_tag :name, @invoice.client.name, name: nil
+      \-->
+      .control-group
+        = label_tag :card_number, "Credit Card Number"
+        .controls
+        = text_field_tag :card_number, nil, name: nil, :placeholder => '1212-1212-1212-1212'
+      .control-group
+        = label_tag :cvc, "Security Code on Card (CVV)"
+        .controls
+          = text_field_tag :card_code, nil, name: nil, :placeholder => '123 or 1234'
+      .control-group
+        = label_tag :card_month, "Card Expiration"
+        .controls
+          = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => 'chosen input-medium'}
+          = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => 'chosen input-small'}
+      <!--
+      .control-group
+        = label_tag :address_zip, "You card's billing zip code"
+        .controls
+        = text_field_tag :address_zip, nil, name: nil, :placeholder => '12345', :class => 'small'
+      \-->
+      %div{:style => 'margin-top: 2em;'}
+        = f.submit "Pay #{number_to_currency @invoice.total}", :class => 'btn btn-primary'
+        %small{:style => 'display: none;'}
+          &nbsp;&nbsp;We will email your receipt to <code>#{@invoice.client.email}</code>.

@@ -1,0 +1,10 @@
+%p Thank you for paying <b>Invoice ##{@invoice.number}</b> in the amount of <b>#{number_to_currency @invoice.total}</b> on #{@invoice.updated_at.strftime('%A, %B %e %Y at %l:%M%P %Z')}.
+
+%p This is your receipt. Please print it for your records.
+
+%p Thanks again,
+
+%p
+  %em= BUSINESS_NAME
+
+%p{:style => 'margin-top: 3em; color: #ccc; font-size: 0.7em;'}= @invoice.stripe_charge_hash
