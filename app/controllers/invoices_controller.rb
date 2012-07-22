@@ -6,7 +6,7 @@ class InvoicesController < ApplicationController
   def show
     unless current_admin_user
       g = Geokit::Geocoders::GeoPluginGeocoder.geocode(request.remote_ip)
-      i = InvoiceView.new({invoice_id: @invoice.id, ip: request.remote_ip, location: "#{g.city}, #{g.country}"})
+      i = InvoiceView.new({invoice_id: @invoice.id, ip: request.remote_ip, location: g.full_address})
       i.save
     end
   end
