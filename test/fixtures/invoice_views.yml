@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  invoice_id: 1
+  ip: MyString
+  location: MyString
+
+two:
+  invoice_id: 1
+  ip: MyString
+  location: MyString

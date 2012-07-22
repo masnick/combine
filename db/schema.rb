@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721052939) do
+ActiveRecord::Schema.define(:version => 20120722170902) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(:version => 20120721052939) do
     t.string   "stripe_customer_token"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+  end
+
+  create_table "invoice_views", :force => true do |t|
+    t.integer  "invoice_id"
+    t.string   "ip"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "invoices", :force => true do |t|

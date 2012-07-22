@@ -4,6 +4,7 @@ class Invoice < ActiveRecord::Base
   attr_accessor :stripe_card_token
 
   belongs_to :client
+  has_many :invoice_views
 
   before_create :create_token
 

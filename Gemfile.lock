@@ -63,6 +63,8 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.1.1)
       actionpack (~> 3.0)
+    geokit (1.6.5)
+      multi_json
     haml (3.1.6)
     has_scope (0.5.1)
     hike (1.2.1)
@@ -168,6 +170,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  geokit
   haml
   jquery-rails
   pg

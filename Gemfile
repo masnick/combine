@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'stripe'
 gem 'activeadmin'
+gem 'geokit'
 
 
 # To use ActiveModel has_secure_password

@@ -1,0 +1,9 @@
+
+- views = InvoiceView.order('created_at desc').limit(5).includes(:invoice)
+- if views.length > 0
+  %ul
+    - views.each do |view|
+      %li
+        Invoice ##{view.invoice.number} viewed about #{time_ago_in_words(view.created_at)} from #{view.location}
+- else
+  %p No invoices have been viewed recently.
