@@ -55,7 +55,7 @@ How?
 
 6.  Run the following command, replacing the values as needed. See `config/initializers/combine.rb` for more information.
 
-        heroku config:set STRIPE_API=ETPdHzvFZ1LFbwrIskXDLrZiudilJvig STRIPE_API_PUBLIC=pk_cD9uLyh2HOG7c2OA1lQBeqrmG1nvR BUSINESS_NAME="Your Name, Inc." SUPPORT_EMAIL=you@email.com APP_URL=example.herokuapp.com MAILGUN_MAILBOX=postmaster@you.mailgun.org MAILGUN_PASSWORD=xxxxxx
+        heroku config:set STRIPE_API=ETPdHzvFZ1LFbwrIskXDLrZiudilJvig STRIPE_API_PUBLIC=pk_cD9uLyh2HOG7c2OA1lQBeqrmG1nvR BUSINESS_NAME="Your Name, Inc." SUPPORT_EMAIL=you@email.com APP_URL=example.herokuapp.com MAILGUN_MAILBOX=postmaster@you.mailgun.org MAILGUN_PASSWORD=xxxxxx RAILS_SECRET_TOKEN=longrandomstring
 
     You can start out with your test API keys.
 
