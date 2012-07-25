@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Cornrows
+module Combine
   class Application < Rails::Application
     # Heroku - https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar/
     config.assets.initialize_on_precompile = false

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Cornrows::Application.load_tasks
+Combine::Application.load_tasks
