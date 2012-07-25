@@ -11,6 +11,9 @@
 
 %p Please complete this payment by filling out the form below. We accept any major credit card and use <a href="http://stripe.com" target="_blank">Stripe</a> to safely and securely process your payment.
 
+- if @invoice.due_date_as_date
+  %p Payment is due by <strong>#{@invoice.due_date_as_date.strftime '%b %e, %Y'}</strong>.
+
 %p Thanks for your business,
 %p{:style => 'font-style: italic;'}= BUSINESS_NAME
 

@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  attr_accessible :amount, :client_id, :fee, :paid, :token, :number, :stripe_charge_hash
+  attr_accessible :amount, :client_id, :fee, :paid, :token, :number, :stripe_charge_hash, :due_date, :emailed_on
 
   attr_accessor :stripe_card_token
 
@@ -34,5 +34,9 @@ class Invoice < ActiveRecord::Base
 
   def paid?
     !self.stripe_charge_hash.blank?
+  end
+
+  def due_date_as_date
+    self.due_date.blank? ? nil : Time.strptime(self.due_date, '%Y-%m-%d')
   end
 end

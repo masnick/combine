@@ -15,9 +15,14 @@ ActiveAdmin::Dashboards.build do
         number_to_currency invoice.amount
       end
       column :created_at
+      column :due_date
       column 'Client link' do |invoice|
         link_to("Link", "/invoices/#{invoice.token}")
       end
+      column 'Email to client' do |invoice|
+        link_to "Email", invoice_admin_client_email_path(invoice), :confirm => "Are you sure?", :method => :post
+      end
+      column "Client emailed on", :emailed_on
     end
     div do
       link_to "Create new invoice", new_admin_invoice_path

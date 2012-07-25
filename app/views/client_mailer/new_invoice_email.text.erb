@@ -1,0 +1,12 @@
+Hi <%= @invoice.client.name %>,
+
+Online payment for Invoice #<%= @invoice.number %> is available at this link:
+
+<%= @url %>
+
+This invoice is <%= @due_date_in_words %>.
+
+Thanks,
+
+<%= BUSINESS_NAME %>
+<%= SUPPORT_EMAIL %>

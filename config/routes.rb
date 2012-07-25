@@ -3,6 +3,12 @@ Combine::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  namespace :admin do
+    resources :client_emails, :only => [] do
+      member {post :invoice}
+    end
+  end
+
   resources :invoices, :only => [:show] do
     member do
       put :pay
