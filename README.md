@@ -1,23 +1,35 @@
 <img src="https://dl.dropbox.com/u/634/permanent/combine/combine.gif" width="200" height="154">
 
-Combine
-=======
+Combine: get paid faster with Stripe + Heroku
+=============================================
 
 What?
 -----
 
 A quick, open source app for accepting credit card payments for invoices online.
 You can easily run it on [Heroku] for free (or your own Rails-capable server).
+[Stripe] handles the credit card transactions.
+
+Features include:
+
+- Personalized, letter-style online payment forms for your clients
+- Email your clients links to payment forms with one click
+- Track when your clients view payment forms
+- Dashboard listing unpaid invoices
+- Add any convenience fee to invoice totals to help cover Stripe's 2.9% fee
+- Plesant typography
+
+Here's a screenshot of an invoice payment form:
 
 <img src="https://dl.dropbox.com/u/634/permanent/combine/example.png" width="600" height="460">
 
-[See a complete example invoice payment page](https://dl.dropbox.com/u/634/permanent/combine/example/index.html).
+[See a complete example invoice payment form](https://dl.dropbox.com/u/634/permanent/combine/example/index.html).
 
 Who?
 ----
 
 Made by [Max Masnick] of [Cassava Labs, LLC] for himself and other like-minded consultants.
-Anyone with basic command line skills can set up `Combine` for themselves.
+Anyone with basic command line skills can set up Combine for themselves.
 
 Why?
 ----
@@ -28,6 +40,8 @@ steal your hard-earned money.
 It's relative easy to set up a website to accept credit card payments with [Stripe]
 (like this one), but there's no need for every contractor or freelancer reinvent the
 wheel.
+
+For more, [see my blog post](http://www.maxmasnick.com/2012/08/10/combine/).
 
 How?
 ---
@@ -53,9 +67,9 @@ How?
     2. Click on `postmaster@you.mailgun.org`.
     3. Create a password and note it for the next step.
 
-6.  Run the following command, replacing the values as needed. See `config/initializers/combine.rb` for more information.
+6.  Run the following command, replacing the values for _all_ the config vars with your own. See `config/initializers/combine.rb` for more information.
 
-        heroku config:set STRIPE_API=ETPdHzvFZ1LFbwrIskXDLrZiudilJvig STRIPE_API_PUBLIC=pk_cD9uLyh2HOG7c2OA1lQBeqrmG1nvR BUSINESS_NAME="Your Name, Inc." SUPPORT_EMAIL=you@email.com APP_URL=example.herokuapp.com MAILGUN_MAILBOX=postmaster@you.mailgun.org MAILGUN_PASSWORD=xxxxxx RAILS_SECRET_TOKEN=longrandomstring
+        heroku config:set STRIPE_API=ETPdHzvFZ1LFbwrIskXDLrZiudilJvig STRIPE_API_PUBLIC=pk_cD9uLyh2HOG7c2OA1lQBeqrmG1nvR BUSINESS_NAME="Your Name, Inc." SUPPORT_EMAIL=you@email.com APP_URL=example.herokuapp.com MAILGUN_MAILBOX=postmaster@you.mailgun.org MAILGUN_PASSWORD=password RAILS_SECRET_TOKEN=longrandomstring
 
     You can start out with your test API keys.
 
