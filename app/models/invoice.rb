@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  attr_accessible :amount, :client_id, :fee, :paid, :token, :number, :stripe_charge_hash, :due_date, :emailed_on
+  attr_accessible :amount, :client_id, :fee, :paid, :token, :number, :stripe_charge_hash, :due_date, :emailed_on, :description
 
   attr_accessor :stripe_card_token
 
