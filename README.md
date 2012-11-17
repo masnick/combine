@@ -3,6 +3,13 @@
 Combine: get paid faster with Stripe + Heroku
 =============================================
 
+NO LONGER MAINTAINED
+--------------------
+
+Harvest [recently introduced](http://www.getharvest.com/blog/2012/10/stripe-harvest-online-invoicing/) native integration with Stripe, so this application is no longer needed or maintained.
+
+The portions of this application that are my code are in the public domain.
+
 What?
 -----
 
@@ -28,7 +35,7 @@ Here's a screenshot of an invoice payment form:
 Who?
 ----
 
-Made by [Max Masnick] of [Cassava Labs, LLC] for himself and other like-minded consultants.
+Made by [Max Masnick] for himself and other like-minded consultants.
 Anyone with basic command line skills can set up Combine for themselves.
 
 Why?
@@ -110,33 +117,8 @@ Things I'd like to do include:
 - Add tracking of email opens
 - Less silly icon
 
-[Cassava Labs, LLC]: http://cassavalabs.com
 [Max Masnick]: http://www.maxmasnick.com
 [Harvest]: http://getharvest.com
 [Stripe]: http://stripe.com
 [Mailgun]: http://mailgun.com
 [Heroku]: http://heroku.com
-
-License (MIT)
--------------
-
-Copyright (c) 2012 Cassava Lab, LLC, [http://cassavalab.com](http://cassavalab.com).
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
