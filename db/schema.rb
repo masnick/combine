@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120725052918) do
     t.datetime "updated_at",         :null => false
     t.integer  "number"
     t.string   "stripe_charge_hash"
+    t.string   "description"
     t.string   "due_date"
     t.datetime "emailed_on"
   end

@@ -9,6 +9,8 @@
   - elsif @invoice.fee > 0
     This includes a #{(@invoice.fee * 100).round(3)}% convenience fee.
 
+%p This invoice is for #{@invoice.description}
+
 %p Please complete this payment by filling out the form below. We accept any major credit card and use <a href="http://stripe.com" target="_blank">Stripe</a> to safely and securely process your payment.
 
 - if @invoice.due_date_as_date
